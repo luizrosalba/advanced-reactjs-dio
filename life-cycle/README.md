@@ -71,6 +71,48 @@ https://tautorn.com.br/javascript-design-patterns/
 
 
 
+# Técnicas com components e DOM 
+
+## Por que trabalhar com Fragments ? 
+
+-Fragments : Um padrão comum no React é que um componente pode retornar múltiplos elementos. Os Fragmentos 
+permitem agrupar uma lista de filhos sem adicionar nós extras ao DOM 
+
+- Trabalhar sem fragments utilizando diversas divs polui o html do codigo 
+
+ <div>
+    <div>
+    React A 
+    </div>
+    <div>
+    React B 
+    </div>
+ </div>
+
+MElhor utilizar fragments 
+
+ <Fragment>
+    <div>
+    React A 
+    </div>
+    <div>
+    React B 
+    </div>
+ </Fragment>
+
+ou ainda usando a sintax sugar 
+
+ <>
+    <div>
+    React A 
+    </div>
+    <div>
+    React B 
+    </div>
+ </>
+
+## Error Boundaries 
+
 
 
 

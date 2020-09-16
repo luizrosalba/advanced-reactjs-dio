@@ -11,10 +11,12 @@ function Column() {
   )
 }
 
+///  <Fragment key={`column-${key}`}>  sempre que tiver uma iteracao de lista precisa  de uma chave unica não funciona com sintax sugar
+// {store.map(renderColumns)}      //// melhor fazer assim , passa uma função , fica mais claro do que criar um comando grande   
 function App() {
 
   const renderColumns = (element, key) => (
-    <Fragment key={`column-${key}`}>
+    <Fragment key={`column-${key}`}> 
       <Column />
     </Fragment>
   )
@@ -22,7 +24,7 @@ function App() {
   return (
     <table>
       
-        {store.map(renderColumns)}        
+        {store.map(renderColumns)}      //// melhor fazer assim , passa uma função , fica mais claro do que criar um comando grande   
       
     </table>
   )
