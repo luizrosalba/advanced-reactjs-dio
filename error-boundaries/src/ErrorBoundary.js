@@ -13,12 +13,13 @@ class ErrorBoundary extends Component {
   componentDidCatch(error, errorInfo) {
     this.setState({
       hasError: true
+      
     })
   }
 
   render() {
     if(this.state.hasError) {
-      return <img src={ErrorImg} />
+      return <img alt='some value' src={ErrorImg} />
     }
     return this.props.children
   }

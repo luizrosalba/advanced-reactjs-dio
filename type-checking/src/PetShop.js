@@ -20,14 +20,14 @@ function PetShop (props) {
   )
 }
 
-PetShop.defaultProps = {
+PetShop.defaultProps = { ////props padrão 
   cats: 0,
   customers: []
 }
 
-PetShop.propTypes = {
-  dogs: PropTypes.number.isRequired,
-  cats: PropTypes.number,
+PetShop.propTypes = {  /// mesmo nome da classe.proptypes 
+  dogs: PropTypes.number.isRequired, /// numero obrigatório
+  cats: PropTypes.number,   //// number nao obrigatório 
   customers: PropTypes.array,
   customerName: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
