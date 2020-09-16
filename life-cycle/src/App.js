@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Twitter from './Twitter'
+import Twitter from './Twitter' /// usando api do twitter
+
 
 class App extends Component {
 
@@ -16,6 +17,7 @@ class App extends Component {
     }, 3000)
   }
 
+  /// criado com arrow function para nao ter problema de bind 
   onRemove = () => {
     this.setState({
       actived: false
@@ -35,7 +37,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.onRemove}>Remover component</button>
-        {this.state.actived && (
+        {this.state.actived && ( /// se estado está ativo apresenta o componente 
           <Twitter posts={posts} loading={this.state.loading} />
         )}
       </div>
