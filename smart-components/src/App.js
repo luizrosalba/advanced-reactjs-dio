@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Button from './Component/Button'
-import Calc from './Component/Calc'
-import PhotosGallery from './Component/PhotosGallery'
+import {Button, Calc, PhotosGallery} from './Component' /// assim fica mais organizado 
+
 
 function App () {
 

@@ -214,3 +214,98 @@ Quantos forem necessários, Error Boundary pode ser criado de forma granular.
 
 # Aula 3 Organizando o seu projeto 
 
+Dumb Component
+
+- Preocupa-se apenas com a apresentação e renderização 
+- Recebem valores via props 
+- Não possuem dependências com o restante da aplicação 
+- Não especificam como os dados são carregados ou sofrem mutação 
+- Recebem valores e callbacks exclusivamente via props 
+- Raramente possuem estado, quando precisam de estado é para controlar a interface e não dados do usuário  ex : dropdown , calendário 
+- São escritos na maioria das vezes como c omponentes funcionais 
+Ex: Button , Card, SideBar, Footer , List , Menu 
+
+```
+import React from 'react'
+import PropTypes from 'prop-types'
+
+function Button(props) {
+  const { children, onClick } = props
+
+  return (
+    <button
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  )
+}
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
+
+export default Button
+```
+
+
+- todos os componentes vao para pasta components 
+
+- bootstrap etc é todo feito usando dumbcomponents 
+
+## Smart Components 
+
+- Preocupa-se como as coisas funcionam 
+- Pode conter Smart e Dumb Components 
+- Providenciam dados e padrões de apresentação ou outros containers 
+- Na maioria dos casos possuem estado e podem chamar outros fluxos do sistema 
+- podem fazer chamadas de serviço , regras de negócio , conectar a store ... 
+- Ex : User Gallery , UserPage, FilterBOok , Followers SideBar, ListCards 
+
+sempre utilizar memo , para evitar renderização desnecessária, como dumb component nao utiliza estado, 
+memo pode evitar um rerender desnecessário  , só vai fazer alteração se houver diferença na arvore 
+
+## Organização de Projeto 
+
+
+
+
+
+
+
+global : 
+src / assets / images 
+src / assets / styles 
+
+tudo que for comum ao sistema 
+src / commons 
+src / commons / constants bom para reaproveitar as mesmas constantes em vários locais na aplicação 
+src / commons /utils -> tudo que for utilitario do projeto , ex: remover acentos, espaços , validação de cpf ...  de strings etc (nao colocar componentes ! ) Não colocar funções deve ficar bem limpo e separado , funções com utilidade única, ou remove espaço ou remove acento nao os dois ao mesmo tempo 
+
+
+componentes smart e dumb 
+src / components
+src / components / index.js /// exportanto todos os componentes 
+
+páginas : 
+src / containers 
+src / containers / bank 
+src / containers / user
+src / containers / store
+src / containers / shop
+
+Geralmente são as API's axios etc , fetch... chamade de servico com header básico , passando token ... 
+funções que fazem chamadas e retornam promisses 
+src / resources 
+
+rotas , react-router , importação do container
+src / routes 
+
+colocar a pasta de teste dentro da mesma pasta do componente, pois ao remover o componente o teste tb será removido 
+
+colocar as rotas, importar e fazer o map para o projeto ter todas as rotas 
+app js é a pagina principal , rotas , providaes , fluxo de autenticacao validação tudo que for global do sistema 
+nao colocar o componente diretamente 
+
+src / components / Buttons / _tests_
+

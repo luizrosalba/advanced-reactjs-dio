@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, PhotosGallery } from './components'
+import { Button, PhotosGallery } from './components' ///assim posso importar todos meus componentes de forma organizada 
 import { sanitizeString } from './commons/utils/string'
 
 function App () {
@@ -12,7 +12,7 @@ function App () {
     'http://placeimg.com/140/60/nature',
   ]
 
-  sanitizeString('teste')
+  sanitizeString('teste') /// importei utils e posso utilizar um utilitario para tatar uma string por exemplo 
 
   return (
     <>

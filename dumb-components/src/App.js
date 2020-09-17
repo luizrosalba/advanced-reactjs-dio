@@ -8,7 +8,7 @@ function App () {
   const [min, setMin] = useState(0)
   const [max, setMax] = useState(30)
 
-  const handleClick = () => {
+  const handleClick = () => {  /// a lógica está n ocontainer, o dumb component está totalmente desacoplado ( componente burro )
     setMin(10)
   }
 

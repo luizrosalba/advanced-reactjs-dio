@@ -1,13 +1,14 @@
 import React, { memo, useState } from 'react'
 import Button from '../Button'
 
+
 function PhotosGallery(props) {
   const { photos } = props
 
   const [gallery, setGallery] = useState(photos)
   
   const handleRemove = (key) => {
-    const newGallery = gallery.filter((img, index) => index !== key) 
+    const newGallery = gallery.filter((img, index) => index !== key)  /// imutável 
     setGallery(newGallery)
   }
 
